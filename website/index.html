@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocuGen AI – Auto Documentation Bot</title>
+  <meta name="description"
+    content="Automatically generate documentation from your pull requests using AST analysis and AI. Keep docs in sync with code, zero manual effort." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">DocuGen AI</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#try-it">Try It</a>
+        <a href="#pricing">Pricing</a>
+        <a href="https://github.com/AryanChaudhary3108/Auto-documentation-bot" target="_blank">GitHub</a>
+      </div>
+      <a href="#pricing" class="btn btn-nav">Get Started Free</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container">
+      <div class="hero-badge">🚀 Now in Public Beta</div>
+      <h1 class="hero-title">
+        Auto-generate docs for<br />
+        every <span class="gradient-text">Pull Request</span>
+      </h1>
+      <p class="hero-subtitle">
+        DocuGen AI analyzes your code changes using AST, generates documentation with AI,
+        and posts it directly on your GitHub Pull Requests. Zero manual effort.
+      </p>
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn btn-primary">Start Free →</a>
+        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+      </div>
+      <div class="hero-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">terminal</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="prompt">$</span> node bot.js --local
+          </div>
+          <div class="terminal-line output">
+            <span class="step">🌳 Step 2:</span> Parsing code with AST analyzer...
+          </div>
+          <div class="terminal-line output">
+            <span class="indent">Old file: 5 function(s) found</span>
+          </div>
+          <div class="terminal-line output">
+            <span class="indent">New file: 6 function(s) found</span>
+          </div>
+          <div class="terminal-line output">
+            <span class="step">🔍 Step 3:</span> Detecting changes...
+          </div>
+          <div class="terminal-line output success">
+            <span class="indent">✅ Added: loginUser(email, password), logoutUser()</span>
+          </div>
+          <div class="terminal-line output danger">
+            <span class="indent">❌ Removed: getUser(id)</span>
+          </div>
+          <div class="terminal-line output warning">
+            <span class="indent">✏️ Modified: greetUser(name) → greetUser(name, greeting)</span>
+          </div>
+          <div class="terminal-line output">
+            <span class="step">🤖 Step 4:</span> Generating documentation with AI...
+          </div>
+          <div class="terminal-line output final">
+            <span class="indent">✅ Comment posted successfully on PR #1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Why DocuGen AI?</h2>
+        <p class="section-subtitle">Powerful features to keep your documentation always in sync</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌳</div>
+          <h3>AST Analysis</h3>
+          <p>Understands code structure using Abstract Syntax Trees — not just text diffs. Detects real semantic
+            changes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI-Powered Docs</h3>
+          <p>Uses LLaMA 3.1 via Groq to generate professional changelogs and README updates automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>GitHub Actions</h3>
+          <p>Runs automatically on every PR via CI/CD. Zero manual triggers, zero hosting costs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>PR Comments</h3>
+          <p>Posts structured summaries directly on your pull requests using the GitHub REST API.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>Change Detection</h3>
+          <p>Detects added, removed, and modified functions — including parameter changes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔌</div>
+          <h3>Plug & Play</h3>
+          <p>One-file setup. Copy the workflow file, add an API key, and you're done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">A 5-step automated pipeline</p>
+      </div>
+      <div class="steps-container">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>PR Created</h3>
+            <p>A developer opens or updates a pull request on GitHub</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>AST Parsing</h3>
+            <p>Babel Parser converts old & new code into Abstract Syntax Trees</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Change Detection</h3>
+            <p>Compares function trees to find added, removed, and modified functions</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>AI Generation</h3>
+            <p>Sends the summary to LLaMA 3.1 which generates a changelog & README update</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>PR Comment</h3>
+            <p>Posts the generated documentation as a structured comment on the PR</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Try It Live Section -->
+  <section class="try-it" id="try-it">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Try It <span class="gradient-text">Live</span></h2>
+        <p class="section-subtitle">Paste your old and new code below and watch DocuGen AI analyze it in real-time</p>
+      </div>
+      <div class="editor-container">
+        <div class="editor-panel">
+          <div class="editor-header">
+            <span class="editor-dot red"></span>
+            <span class="editor-dot yellow"></span>
+            <span class="editor-dot green"></span>
+            <span class="editor-label">old.js (Before)</span>
+          </div>
+          <textarea id="oldCode" spellcheck="false" placeholder="// Paste your old code here...">function greetUser(name) {
+  return "Hello, " + name;
+}
+
+function getUser(id) {
+  return db.find(id);
+}
+
+function calculateTotal(items) {
+  return items.reduce((sum, i) => sum + i.price, 0);
+}
+
+function formatDate(date) {
+  return date.toLocaleDateString();
+}
+
+function validateEmail(email) {
+  return email.includes("@");
+}</textarea>
+        </div>
+        <div class="editor-panel">
+          <div class="editor-header">
+            <span class="editor-dot red"></span>
+            <span class="editor-dot yellow"></span>
+            <span class="editor-dot green"></span>
+            <span class="editor-label">new.js (After)</span>
+          </div>
+          <textarea id="newCode" spellcheck="false" placeholder="// Paste your new code here...">function greetUser(name, greeting) {
+  return greeting + ", " + name;
+}
+
+function calculateTotal(items) {
+  return items.reduce((sum, i) => sum + i.price, 0);
+}
+
+function formatDate(date, locale) {
+  return date.toLocaleDateString(locale);
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function loginUser(email, password) {
+  return auth.signIn(email, password);
+}
+
+function logoutUser() {
+  return auth.signOut();
+}</textarea>
+        </div>
+      </div>
+      <div class="analyze-row">
+        <button id="analyzeBtn" class="btn btn-primary btn-large" onclick="analyzeCode()">
+          🔍 Analyze Changes
+        </button>
+      </div>
+      <div id="results" class="results-panel" style="display:none;">
+        <div class="results-header">
+          <h3>📊 Analysis Results</h3>
+        </div>
+        <div id="statsBar" class="stats-bar"></div>
+        <div id="changesOutput" class="changes-output"></div>
+        <div id="docsOutput" class="docs-output"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">Start free. Scale as you grow.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Free Plan -->
+        <div class="pricing-card">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">
+            <span class="price">$0</span>
+            <span class="period">/month</span>
+          </div>
+          <p class="plan-desc">For individual developers & open-source projects</p>
+          <ul class="plan-features">
+            <li>✅ JavaScript AST analysis</li>
+            <li>✅ Basic AI doc generation</li>
+            <li>✅ GitHub Actions integration</li>
+            <li>✅ PR comments</li>
+            <li>✅ 1 repository</li>
+            <li>❌ Multi-language support</li>
+            <li>❌ Auto-commit docs</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Get Started Free</a>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="pricing-card popular">
+          <div class="popular-badge">Most Popular</div>
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">
+            <span class="price">$9</span>
+            <span class="period">/repo/month</span>
+          </div>
+          <p class="plan-desc">For teams and startups</p>
+          <ul class="plan-features">
+            <li>✅ Everything in Free</li>
+            <li>✅ Unlimited AI doc generation</li>
+            <li>✅ TypeScript & Python support</li>
+            <li>✅ Multi-file analysis</li>
+            <li>✅ Custom doc templates</li>
+            <li>✅ Priority AI processing</li>
+            <li>❌ Auto-commit docs</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Start Pro Trial</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price">
+            <span class="price">$29</span>
+            <span class="period">/org/month</span>
+          </div>
+          <p class="plan-desc">For companies with 10+ developers</p>
+          <ul class="plan-features">
+            <li>✅ Everything in Pro</li>
+            <li>✅ Auto-commit docs to PR</li>
+            <li>✅ Slack & Discord alerts</li>
+            <li>✅ Documentation dashboard</li>
+            <li>✅ Unlimited repos</li>
+            <li>✅ Private repo support</li>
+            <li>✅ Priority support</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🤖</span>
+          <span class="logo-text">DocuGen AI</span>
+          <p>Auto-generate documentation for every pull request.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#how-it-works">How It Works</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="https://github.com/AryanChaudhary3108/Auto-documentation-bot" target="_blank">GitHub</a>
+            <a href="#">Documentation</a>
+            <a href="#">API Reference</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 DocuGen AI. Built for BuildX Hackathon.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
