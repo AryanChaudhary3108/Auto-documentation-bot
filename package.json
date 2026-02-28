@@ -1,0 +1,25 @@
+{
+  "name": "docugen-ai",
+  "version": "1.0.0",
+  "description": "DocuGen AI – Auto Documentation Bot for GitHub PRs",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "local": "node bot.js --local"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.24.0",
+    "@babel/traverse": "^7.24.0",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  },
+  "keywords": [
+    "documentation",
+    "github",
+    "bot",
+    "ast",
+    "openai"
+  ],
+  "author": "",
+  "license": "MIT"
+}
